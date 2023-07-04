@@ -1,0 +1,10 @@
+1
+0xffffffff
+GROUP : 1
+[]
+opacityFlicker.java
+0xff0000ff
+GROUP : 2
+[]
+opacityFlicker.java
+0xff0000ff
