@@ -1,0 +1,102 @@
+README: MSV 3.0
+----------------------
+Version 3.0 of the Music Simulation Video Player
+--------------------------------------------------
+In the initial music player scene if you press t it will create a time stamp
+
+STIPULATION - IMAGES MUST BE 800 by 800 LESS IN PIXELS TO FIT THE FRAME
+CONSIDER ADJUSTING TO ACCOMODATE ANY IMAGE SIZE WITH A SCROLLABLE PANE -- RIGHT NOW WE ARE LOSING QUALITY BY HAVING THIS LIMITATION
+
+NOTE = the timestamps will only update when the program is playing not when the audio is paused, same with dot groups in the animator
+
+------
+
+tool for animating music videos and creating visuals by the artist mechanical hopper
+
+step 1 -- the user chooses to either load information from a previous audio file, which will take
+any existing information and load it, taking the user to a new Animator board where he/she can toggle around
+and alter the current aimation, or they will create a new one, which if there is an existing animation for
+the selected sound - these will be written over.
+
+step 2 -- the user will be taken to the musicPlayer pane - controlled by the music player class, in this
+class the user can then generate a series of time stamps after selecting an audio file. To create a new time
+stamp click the t key and to make sure the time stamp is saved, you need to make sure to check the box from
+the list of time stamps on the right, for each time stamp an image must be selected from the radio buttons
+below, if one is not a default image will be loaded for that time stamp.
+
+step 3 -- if all information is set, the load button will bring up a new class Animater which will host
+an array of animeBoards which can be toggled with a list of radio buttons on the right. For each time stamp
+the image will be seperated into a series of dot groups - with it's own seperate array of circles.
+    - functions by saving time stamps to a txt file with the audio file name, takes that and loads it into
+    a series of animation panes (see class animeBoard).
+    - The animeBoard tracks the circles which compile the fills of the image, the user can then split the dot
+    groups into default groups -- must be done first, then add new user dot groups by clicking the dots on the
+    dot pane and it will add them to the group which is selected by the radio button in the dot list on the
+    right hand side.
+    - The OG fills button will reveal the original fills
+    - after the information is loaded (load button 1 per slide) with a movement - pre - programmed animations in the movements folder --
+    the preview button allows you to see what the animation for that time stamp will look like, click the stop preview button
+    to return to the programming page.
+
+step 4 -- on the left hand slide the user will click the load button and if all the information in each
+animation time stamp is loaded the visualizer screen will appear. The visuals for this are located in the
+VisualizerConcept.png file. Basically it has a timeline at the bottom if the user's mouse hovers over it, and it
+will play the audio with the finished music video. There will be an x icon in the right hand corner, again
+only visible if the user toggles over it and if this is clicked the program will terminate.
+
+---------
+
+The series of music videos I will develope with this program:
+
+Live LineUp: (numbers don't completely match, just used to identify the image files):
+1 - free falling - tom petty
+2 - dream on - aerosmith
+3 - november rain - guns n roses
+4 - snow - rhcp
+5 - wish you were here - pink floyd
+6 - here I go again - whitesnake
+9 - complicated - avril lavigne
+10 - heaven - bryan adams
+11 - the search is over - survivor
+12 - faithfully - journey
+13 - alone - heart
+14 - these dreams - heart
+15 - it must have been love - roxette
+16 - kiss me - six pence none the richer
+17 - sweet child o mine - guns and roses
+18 - hotel california - eagles
+19 - redbone - childish gambino (note -- this and the next one indexes are off a bit)
+20 - knocking on heaven's door - guns n roses
+21 - beautiful - christina aguilera
+22 - halo - beyonce
+23 - broken wings - Mr. Mister
+25 - imagine - john lennon
+26 - human nature - michael jackson
+27 - wheel in the sky - journey
+28 - give me a reason - tracey chapman
+29 - when I come around - green day
+30 - falling in love - elvis presly
+31 - skinny love - bon iver
+32 - wake me up - avicci
+33 - back to black - amy wine house
+34 forevor young - alphaville
+35 - may it be - enya
+36 - shake it out - florence
+
+KNOWN BUGS:
+1. the merge movement does not work because it requires a borderpane -- will need to fix the parameters later
+2. music player class: bug if you don't choose a choice for an audio from the choicebox - crashes, program in default - remove the weird DS signature if you select that audio file it crashes as well.
+3. line 84 of the time stamp class
+
+FUTURE IMPROVEMENTS:
+
+- can't go back and forth between the steps -- ex -- if visualizer - can't return to the animator - if in the animator
+you can't return to the musicPlayer or OG title screen.
+
+- when selecting a movement - parameters per movement such as angle of rotation have to be pre - programmed - maybe find
+a way for the user to manipulate this on their own.
+
+- could implement some sort of REPL to change the pixel size - or a text field in the animeBoard class
+
+- in the group class - shouldn't the range logic be moved up to the groupizer that way it doesn't run each new group and we can just retrieve it instead of recalculating it?
+
