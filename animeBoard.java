@@ -34,7 +34,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
+//TODO: for a future feature -- could update so during the preview pane it plays that specific section of the audio when the animation is running
 
 public class animeBoard {
 
@@ -70,6 +70,7 @@ public class animeBoard {
     private VBox UGGRPane;
     private RadioButton selectedRB;
     private String fp;
+    private ScrollPane scrollable;
     private int numUserGrps;
 
     /*
@@ -145,7 +146,7 @@ public class animeBoard {
             dotGSettings.getChildren().addAll(groupPane);
         }
 
-        ScrollPane scrollable = new ScrollPane();
+        scrollable = new ScrollPane();
         scrollable.setPrefViewportHeight(Constants.SCROLLP_HEIGHT);
         grLayout.getChildren().addAll(dotGSettings, UGGRPane);
         scrollable.setContent(grLayout);
@@ -154,6 +155,7 @@ public class animeBoard {
 
         //bottom set the dot group toggler with the num of dots up and down arrows and a label (HBOX)
         HBox toggles = new HBox();
+        toggles.setLayoutY(Constants.UPPER_BOUND);
 
         Button preview = new Button();
         preview.setText(Constants.PREV_MSG);
@@ -435,7 +437,7 @@ public class animeBoard {
             root.getChildren().remove(n);
         }
         frame.getChildren().remove(root);
-        frame.getChildren().add(circPane);
+        frame.setCenter(circPane);
     };
 
     //preview pane pops up and displays what the animation will look like for that time stamp
@@ -784,3 +786,6 @@ public class animeBoard {
     }
 
 }
+
+
+
