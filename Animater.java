@@ -167,7 +167,6 @@ public class Animater {
     }
 
     /*
-    TODO: still need to finish
     loads the visualizer if all information is filled out in the anime boards
      */
     public void playAnimation(){
@@ -176,7 +175,7 @@ public class Animater {
             for(animeBoard a : slides){
                 a.stopTime();
             }
-            //TODO: play the animation after loading in text files - check all fields are filled first and make a new class of visualizer for that
+            Visualizer visual = new Visualizer(rt, fileP, timeStamps);
         } else {
             Label error = new Label(Constants.LOAD_ERROR);
             error.setTextFill(Color.RED);
