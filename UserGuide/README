@@ -4,16 +4,19 @@ Version 3.0 of the Music Simulation Video Player
 --------------------------------------------------
 In the initial music player scene if you press t it will create a time stamp
 
+movements are referenced both by the previewer in the animeBoard Class and a switch in the visualizer - if you program
+a new move both need to be altered for it to be effectivly used, or at the very least alter the switch in the visualizer
+
 STIPULATION - IMAGES MUST BE 800 by 800 LESS IN PIXELS TO FIT THE FRAME
 CONSIDER ADJUSTING TO ACCOMODATE ANY IMAGE SIZE WITH A SCROLLABLE PANE -- RIGHT NOW WE ARE LOSING QUALITY BY HAVING THIS LIMITATION
-
+Also - if this is downloaded from git - none of the .wav files for th audio could fit -- they were too big - so you'll have to redownload them in the music folder
 NOTE = the timestamps will only update when the program is playing not when the audio is paused, same with dot groups in the animator
 
 ------
 
 tool for animating music videos and creating visuals by the artist mechanical hopper
 
-step 1 -- the user chooses to either load information from a previous audio file, which will take
+step 1 -- the user chooses to either load information from a previous audio file (STILL NEED TO IMPLEMENT IN THE FUTURE), which will take
 any existing information and load it, taking the user to a new Animator board where he/she can toggle around
 and alter the current aimation, or they will create a new one, which if there is an existing animation for
 the selected sound - these will be written over.
@@ -89,7 +92,7 @@ KNOWN BUGS:
 3. line 84 of the time stamp class
 
 FUTURE IMPROVEMENTS:
-
+- finish the visualizer with toggle buttons concept seen in the visualizer concept diagram
 - can't go back and forth between the steps -- ex -- if visualizer - can't return to the animator - if in the animator
 you can't return to the musicPlayer or OG title screen.
 
