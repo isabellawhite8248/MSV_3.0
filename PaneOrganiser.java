@@ -1,6 +1,8 @@
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -74,12 +76,13 @@ public class PaneOrganiser {
 
     }
 
-    public void startOldAnimation(){
-
-        this.isNew = false;
-        setUpAnim();
-
-    }
+    //TODO: could be a future implementation if we have the time
+//    public void startOldAnimation(){
+//
+//        this.isNew = false;
+//        setUpAnim();
+//
+//    }
 
 
     public void setButtons(){
@@ -94,22 +97,27 @@ public class PaneOrganiser {
 
         VBox options = new VBox();
         int buttonSpacing = Constants.OFFSET*3;
-
-        Label msg = new Label(Constants.SELECT_OPTION);
+//        Label msg = new Label(Constants.SELECT_OPTION);
 
         Button newAnime = new Button(Constants.NEW_ANIME);
         newAnime.setOnAction((ActionEvent e) -> startNewAnimation());
 
-        Button oldAnime = new Button(Constants.OLD_ANIME);
-        oldAnime.setOnAction((ActionEvent e) -> startOldAnimation());
+//        Button oldAnime = new Button(Constants.OLD_ANIME);
+//        oldAnime.setOnAction((ActionEvent e) -> startOldAnimation());
 
-        options.getChildren().addAll(newAnime, oldAnime);
+        options.getChildren().addAll(newAnime);
         options.setSpacing(buttonSpacing);
 
+        Image img = new Image("TheMechanicalHopper.png");
+        ImageView imageV = new ImageView();
+        imageV.setImage(img);
+        imageV.setFitWidth(Constants.APP_WIDTH);
+        imageV.setFitHeight(Constants.APP_HEIGHT);
+
         //where you can add more buttons to the button box
-        buttonBox.getChildren().addAll(msg, options, quitButton);
+        buttonBox.getChildren().addAll(options, quitButton);
         buttonBox.setSpacing(buttonSpacing);
-        this.root.getChildren().add(buttonBox);
+        this.root.getChildren().addAll(imageV, buttonBox);
     }
 
 }
